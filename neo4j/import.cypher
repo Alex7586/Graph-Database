@@ -41,3 +41,9 @@ LOAD CSV WITH HEADERS FROM ($BASE_URL + '/has_keyword.csv') AS r
 MATCH (p:Paper {id: r.paper_id})
 MATCH (k:Keyword {id: r.keyword_id})
 MERGE (p)-[:HAS_KEYWORD]->(k);
+
+MATCH (a1:Author)-[:AUTHORED]->(p:Paper)<-[:AUTHORED]-(a2:Author)
+WHERE a1.id < a2.id
+MERGE (a1)-[:COAUTHOR]->(a2)
+MERGE (a2)-[:COAUTHOR]->(a1);
+
