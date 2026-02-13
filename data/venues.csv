@@ -1,0 +1,6 @@
+id,name,type
+V1,ICDM,conference
+V2,KDD,conference
+V3,NeurIPS,conference
+V4,TKDE,journal
+V5,VLDB,conference

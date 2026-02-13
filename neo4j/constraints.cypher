@@ -1,0 +1,9 @@
+CREATE CONSTRAINT author_id IF NOT EXISTS FOR (a:Author) REQUIRE a.id IS UNIQUE;
+CREATE CONSTRAINT paper_id  IF NOT EXISTS FOR (p:Paper)  REQUIRE p.id IS UNIQUE;
+CREATE CONSTRAINT keyword_id IF NOT EXISTS FOR (k:Keyword) REQUIRE k.id IS UNIQUE;
+CREATE CONSTRAINT venue_id  IF NOT EXISTS FOR (v:Venue)  REQUIRE v.id IS UNIQUE;
+CREATE CONSTRAINT inst_id   IF NOT EXISTS FOR (i:Institution) REQUIRE i.id IS UNIQUE;
+
+CREATE INDEX author_name IF NOT EXISTS FOR (a:Author) ON (a.name);
+CREATE INDEX paper_year  IF NOT EXISTS FOR (p:Paper) ON (p.year);
+CREATE INDEX keyword_value IF NOT EXISTS FOR (k:Keyword) ON (k.value);
