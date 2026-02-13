@@ -3,7 +3,7 @@ import random
 from pathlib import Path
 
 # -------------------------
-# Setări dataset (cerința ta)
+# Setări dataset
 # -------------------------
 SEED = 42
 N_AUTHORS = 200
